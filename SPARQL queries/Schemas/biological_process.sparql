@@ -1,0 +1,20 @@
+PREFIX schema: <https://schema.org/> 
+PREFIX bio: <https://bioschemas.org/> # tmp
+PREFIX wikibase: <http://wikiba.se/ontology#>
+
+CONSTRUCT {
+?biological_process wdt:P31 wd:Q2996394.
+?biological_process wdt:P361 ?part_of.
+?biological_process wdt:P527 ?has_part.
+?biological_process wdt:P128 ?molecular_function_regulated.
+}
+
+
+WHERE {
+{?biological_process wdt:P31/wdt:P279 wd:Q2996394}
+UNION {?biological_process wdt:P31/wdt:P279 wd:Q2996394. ?biological_process wdt:P361 ?part_of.}
+UNION {?biological_process wdt:P31/wdt:P279 wd:Q2996394. ?biological_process wdt:P527 ?has_part.}
+UNION {?biological_process wdt:P31/wdt:P279 wd:Q2996394. ?biological_process wdt:P128 ?molecular_function_regulated.}
+
+SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en" }
+}

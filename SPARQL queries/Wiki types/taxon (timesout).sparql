@@ -11,3 +11,5 @@ WHERE {
 
 SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en" }
 }
+
+LIMIT 1500000
