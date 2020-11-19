@@ -1,19 +1,17 @@
 PREFIX schema: <https://schema.org/> 
-PREFIX bio: <https://bioschemas.org/> # tmp
 PREFIX wikibase: <http://wikiba.se/ontology#>
 
 CONSTRUCT {
-?protein a bio:Protein.
-?protein bio:bioChemInteraction ?element_protein_interacts_with.
-?protein bio:isEncodedByBioChemEntity ?gene_protein_is_encoded_by.
-?protein bio:isPartOfBioChemEntity ?part_of.
-?protein bio:hasBioChemEntityPart ?has_part.
-?protein bio:hasMolecularFunction ?molecular_function.
-?protein bio:isInvolvedInBiologicalProcess ?biological_process.
-?protein bio:taxonomicRange ?taxon.
-?protein bio:isLocatedInSubcellularLocation ?cellular_location.
-?protein bio:bioChemInteraction ?physically_interacts_with.
-
+?protein a schema:Protein.
+?protein schema:bioChemInteraction ?element_protein_interacts_with.
+?protein schema:isEncodedByBioChemEntity ?gene_protein_is_encoded_by.
+?protein schema:isPartOfBioChemEntity ?part_of.
+?protein schema:hasBioChemEntityPart ?has_part.
+?protein schema:hasMolecularFunction ?molecular_function.
+?protein schema:isInvolvedInBiologicalProcess ?biological_process.
+?protein schema:taxonomicRange ?taxon.
+?protein schema:isLocatedInSubcellularLocation ?cellular_location.
+?protein schema:bioChemInteraction ?physically_interacts_with.
 }
 
 WHERE {

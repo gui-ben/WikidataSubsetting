@@ -1,11 +1,10 @@
 PREFIX schema: <https://schema.org/> 
-PREFIX bio: <https://bioschemas.org/> # tmp
 PREFIX wikibase: <http://wikiba.se/ontology#>
 
 CONSTRUCT {
 ?chemical_compound a schema:ChemicalSubstance.
 ?chemical_compound schema:chemicalRole ?subject_has_role.
-?chemical_compound wdt:P769 ?significant_drug_interaction.
+?chemical_compound schema:interactingDrug ?significant_drug_interaction.
 ?chemical_compound wdt:P279 ?subclass_of.
 ?chemical_compound wdt:P3780 ?active_ingredient_in.
 ?chemical_compound schema:associatedDisease ?medical_condition_treated.

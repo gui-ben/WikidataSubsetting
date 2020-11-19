@@ -1,11 +1,10 @@
 PREFIX schema: <https://schema.org/> 
-PREFIX bio: <https://bioschemas.org/> # tmp
 PREFIX wikibase: <http://wikiba.se/ontology#>
 
 CONSTRUCT {
 ?anatomical_structure a schema:AnatomicalStructure.
 ?anatomical_structure schema:partOfSystem ?part_of.
-?anatomical_structure wdt:P527 ?has_part.
+?anatomical_structure schema:subStructure ?has_part.
 }
 
 

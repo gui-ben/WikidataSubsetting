@@ -1,13 +1,15 @@
 PREFIX schema: <https://schema.org/> 
-PREFIX bio: <https://bioschemas.org/> # tmp
 PREFIX wikibase: <http://wikiba.se/ontology#>
 
 CONSTRUCT {
-?taxon a bio:Taxon.
+?taxon a schema:Taxon.
+?taxon wdt:P1542 ?has_effect.
 }
 
 WHERE {
 {?taxon wdt:P31/wdt:P279* wd:Q16521.} # timesout
+UNION {?taxon wdt:P31/wdt:P279* wd:Q16521. } # timesout
+
 
 SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en" }
 }

@@ -1,9 +1,8 @@
 PREFIX schema: <https://schema.org/> 
-PREFIX bio: <https://bioschemas.org/> # tmp
 PREFIX wikibase: <http://wikiba.se/ontology#>
 
 CONSTRUCT {
-?symptom a bio:MedicalSignOrSymptom.
+?symptom a schema:MedicalSignOrSymptom.
 }
   
 WHERE {

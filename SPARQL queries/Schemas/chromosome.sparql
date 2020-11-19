@@ -1,5 +1,4 @@
-PREFIX schema: <https://schema.org/> 
-PREFIX bio: <https://bioschemas.org/> # tmp
+PREFIX schema: <https://schema.org/>
 PREFIX wikibase: <http://wikiba.se/ontology#>
 
 CONSTRUCT {
