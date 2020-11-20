@@ -1,0 +1,16 @@
+PREFIX schema: <https://schema.org/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+
+CONSTRUCT {
+?protein wdt:P352 ?uniprot_id.
+?protein schema:sameAs ?uniprot_url.
+}
+
+WHERE {
+?protein wdt:P31 wd:Q8054.
+?protein wdt:P352 ?uniprot_id.
+wd:P352 wdt:P1630 ?formatterURL.
+BIND(IRI(REPLACE(?formatterURL, "\\$1", ?uniprot_id)) AS ?uniprot_url)
+
+SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en" }
+}
