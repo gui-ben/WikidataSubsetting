@@ -18,12 +18,12 @@ CONSTRUCT {
 
 WHERE {
 #{?protein wdt:P31/wdt:P279* wd:Q8054.} # Instance of or subclass of Protein.
- {?protein wdt:P129 ?element_protein_interacts_with.}
-UNION {?protein wdt:P31/wdt:P279* wd:Q8054. ?protein wdt:P702 ?gene_protein_is_encoded_by.}
+#UNION {?protein wdt:P129 ?element_protein_interacts_with.}
+#UNION {?protein wdt:P31/wdt:P279* wd:Q8054. ?protein wdt:P702 ?gene_protein_is_encoded_by.}
 #UNION {?protein wdt:P31/wdt:P279* wd:Q8054. ?protein wdt:P361 ?part_of.}
 #UNION {?protein wdt:P31/wdt:P279* wd:Q8054. ?protein wdt:P527 ?has_part}
 #UNION {?protein wdt:P31/wdt:P279* wd:Q8054. ?protein wdt:P680 ?molecular_function}
-#UNION {?protein wdt:P31/wdt:P279* wd:Q8054. ?protein wdt:P682 ?biological_process}
+{?protein wdt:P31/wdt:P279* wd:Q8054. ?protein wdt:P682 ?biological_process}
 #UNION {?protein wdt:P31/wdt:P279* wd:Q8054. ?protein wdt:P703 ?taxon.}
 #UNION {?protein wdt:P31/wdt:P279* wd:Q8054. ?protein wdt:P681 ?cellular_location.}
 #UNION {?protein wdt:P31/wdt:P279* wd:Q8054. ?protein wdt:P129 ?physically_interacts_with.}

@@ -2,15 +2,31 @@ PREFIX schema: <https://schema.org/>
 PREFIX wikibase: <http://wikiba.se/ontology#>
 
 CONSTRUCT {
+#?protein a schema:Protein.
+?protein schema:bioChemInteraction ?element_protein_interacts_with.
+?protein schema:isEncodedByBioChemEntity ?gene_protein_is_encoded_by.
+?protein schema:isPartOfBioChemEntity ?part_of.
+?protein schema:hasBioChemEntityPart ?has_part.
+?protein schema:hasMolecularFunction ?molecular_function.
+?protein schema:isInvolvedInBiologicalProcess ?biological_process.
+?protein schema:taxonomicRange ?taxon.
+?protein schema:isLocatedInSubcellularLocation ?cellular_location.
+?protein schema:bioChemInteraction ?physically_interacts_with.
 ?protein wdt:P352 ?uniprot_id.
 ?protein schema:sameAs ?uniprot_url.
 }
 
 WHERE {
-?protein wdt:P31 wd:Q8054.
-?protein wdt:P352 ?uniprot_id.
-wd:P352 wdt:P1630 ?formatterURL.
-BIND(IRI(REPLACE(?formatterURL, "\\$1", ?uniprot_id)) AS ?uniprot_url)
-
+#{?protein wdt:P31/wdt:P279* wd:Q8054.} # Instance of or subclass of Protein.
+#UNION {?protein wdt:P129 ?element_protein_interacts_with.}
+#UNION {?protein wdt:P31/wdt:P279* wd:Q8054. ?protein wdt:P702 ?gene_protein_is_encoded_by.}
+#UNION {?protein wdt:P31/wdt:P279* wd:Q8054. ?protein wdt:P361 ?part_of.}
+#UNION {?protein wdt:P31/wdt:P279* wd:Q8054. ?protein wdt:P527 ?has_part}
+{?protein wdt:P31/wdt:P279* wd:Q8054. ?protein wdt:P680 ?molecular_function}
+#UNION {?protein wdt:P31/wdt:P279* wd:Q8054. ?protein wdt:P682 ?biological_process}
+#UNION {?protein wdt:P31/wdt:P279* wd:Q8054. ?protein wdt:P703 ?taxon.}
+#UNION {?protein wdt:P31/wdt:P279* wd:Q8054. ?protein wdt:P681 ?cellular_location.}
+#UNION {?protein wdt:P31/wdt:P279* wd:Q8054. ?protein wdt:P129 ?physically_interacts_with.}
+#UNION {?protein wdt:P31/wdt:P279* wd:Q8054. ?protein wdt:P352 ?uniprot_id. wd:P352 wdt:P1630 ?formatterURL. BIND(IRI(REPLACE(?formatterURL, "\\$1", ?uniprot_id)) AS ?uniprot_url)}
 SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en" }
 }
