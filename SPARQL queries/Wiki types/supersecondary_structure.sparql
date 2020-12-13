@@ -9,7 +9,7 @@ CONSTRUCT {
   
 WHERE {
 {?supersecondary_structure wdt:P31/wdt:P279* wd:Q7644128}
-UNION {?supersecondary_structure wdt:P31/wdt:P279* wd:Q215980. ?supersecondary_structure wdt:P361 ?part_of.}
+UNION {?supersecondary_structure wdt:P31/wdt:P279* wd:Q7644128. ?supersecondary_structure wdt:P361 ?part_of.}
 
 SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en" }
 }
