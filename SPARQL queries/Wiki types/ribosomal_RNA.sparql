@@ -3,7 +3,7 @@ PREFIX bio: <https://bioschemas.org/> # tmp
 PREFIX wikibase: <http://wikiba.se/ontology#>
 
 CONSTRUCT {
-?ribosomal_RNA wdt:P31 wd:Q28885102.
+?ribosomal_RNA wdt:P31 wd:Q215980.
 ?ribosomal_RNA wdt:P703 ?taxon.
 }
   
