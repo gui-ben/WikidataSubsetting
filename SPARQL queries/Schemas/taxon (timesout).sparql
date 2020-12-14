@@ -1,4 +1,4 @@
-PREFIX schema: <https://schema.org/> 
+PREFIX schema: <https://schema.org/>
 PREFIX wikibase: <http://wikiba.se/ontology#>
 
 CONSTRUCT {
@@ -7,11 +7,9 @@ CONSTRUCT {
 }
 
 WHERE {
-{?taxon wdt:P31/wdt:P279* wd:Q16521.} # timesout
-UNION {?taxon wdt:P31/wdt:P279* wd:Q16521. } # timesout
+{?taxon wdt:P31/wdt:P279* wd:Q16521.}
+UNION {?taxon wdt:P31/wdt:P279 wd:Q16521. ?taxon wdt:P1542 ?has_effect.}
 
 
 SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en" }
 }
-
-LIMIT 1500000
