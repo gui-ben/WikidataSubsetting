@@ -2,7 +2,7 @@ PREFIX schema: <https://schema.org/>
 PREFIX wikibase: <http://wikiba.se/ontology#>
 
 CONSTRUCT {
-?therapeutic_use a schema:MedicalTherapy.
+?therapeutic_use wdt:P31 Q50379781.
 ?therapeutic_use schema:Drug ?pharmaceutical_product.
 ?therapeutic_use schema:relatedCondition ?disease.
 }
