@@ -14,7 +14,7 @@ CONSTRUCT {
 
 WHERE {
 {?gene wdt:P31/wdt:P279 wd:Q7187.}
-UNION {?gene wdt:P31/wdt:P270 wd:Q7187. ?gene wdt:P703 ?taxon. }
+UNION {?gene wdt:P31/wdt:P279 wd:Q7187. ?gene wdt:P703 ?taxon. }
 UNION {?gene wdt:P31/wdt:P279 wd:Q7187. ?gene wdt:P684 ?ortholog_gene.}
 UNION {?gene wdt:P31/wdt:P279 wd:Q7187. ?gene wdt:P682 ?biological_process.}
 UNION {?gene wdt:P31/wdt:P279 wd:Q7187. ?gene wdt:P688 ?protein_encoded_by_gene.}
