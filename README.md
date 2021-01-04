@@ -44,7 +44,7 @@ For this method you can follow [@addshore](https://www.github.com/addshore)'s tu
 * Expensive.
 As of December 2020, a compressed version of all entities in Wikidata is ~90 GB. Uncompressed is ~1 TB.
 
-* Slow
+* Slow.
 The data will take about 1TB of disk space, but then you will have to load all of it into a triplestore of your choice, like [Blazegraph](https://www.blazegraph.com/). This process, on a standard Google Cloud VM configuration like the one used on [@addshore](https://www.github.com/addshore)'s tutorial, at the time of writing, takes around 10 days.
 
 
