@@ -7,8 +7,8 @@ With CONSTRUCT queries, we created a life sciences Wikidata subset using as a gu
 ## Contents
 
 On this folder you will find:
-* [A Python script to run one query on the Wikidata public endpoint](https://github.com/ingmrb/WikidataSubsetting/blob/main/run_1_query.py)
-* [A Python script to run all queries on the repo](https://github.com/ingmrb/WikidataSubsetting/blob/main/run_queries.py)
+* [A Python script to run one query on the Wikidata public endpoint](https://github.com/ingmrb/WikidataSubsetting/blob/main/Public%20queries%20method/run_1_query.py)
+* [A Python script to run all queries on the repo](https://github.com/ingmrb/WikidataSubsetting/blob/main/Public%20queries%20method/run_queries.py)
 * Two folders containing two set of queries. One folder with queries creating a subset using Wikidata types and one folder with queries that create a new graph using [Bioschemas](https://bioschemas.org/) types and properties whenever possible.
 
 
