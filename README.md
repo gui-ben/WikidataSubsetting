@@ -26,7 +26,7 @@ A [CONSTRUCT](https://www.w3.org/TR/rdf-sparql-query/#construct) query will allo
 * Cheap (most likely free).
 You don't need more extra space than the disk space that the resulting subset will take.
 
-* Fast
+* Fast.
 Each query either runs in a few minutes or don't.
 
 ### Cons
@@ -41,7 +41,7 @@ For this method you can follow [@addshore](https://www.github.com/addshore)'s tu
 * The resulting subset will be a complete Wikidata subset.
 
 ### Cons
-* Expensive
+* Expensive.
 As of December 2020, a compressed version of all entities in Wikidata is ~90 GB. Uncompressed is ~1 TB.
 
 * Slow
